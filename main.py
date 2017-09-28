@@ -3,15 +3,17 @@ import sys
 import os
 
 blk_file_name = 'blklist'
-
+# Your IP's for check
 IP = ['8.8.8.8', '8.8.4.4']
 
-
+#Read file
 blk_File = open(os.path.join(os.path.dirname(sys.argv[0]), blk_file_name))
 
+#Add to array
 with blk_File as f:
     list = f.readlines()
     list = [x.strip() for x in list]
+
 
 for bl in list:
     try:
